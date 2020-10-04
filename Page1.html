@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change the paragraph content using Javascript</title>
+    <style>
+        .bt
+{
+    margin-top: 20px;
+    padding: 10px;
+    margin-left: 45%;
+}
+a
+{
+    color: #7cc278;
+    text-decoration: none;
+}
+a:hover
+{
+    text-decoration: none;
+    color: brown;
+}
+    </style>
+</head>
+<body>
+
+    <div style="background-color:bisque; padding: 20px 20px; border-radius: 10px;">
+        <h1> Demonstration of java script to display date and time </h1>
+        <h2>JavaScript new Date()</h2>
+
+<p id="demo"></p>
+
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d;
+</script>
+
+    </div>
+<br><br>
+
+    <div style="background-color:bisque; padding: 20px 20px; border-radius: 10px;">
+        <h1>Change the paragraph content using java script</h1>
+        <h2> Work from Home (pros and cons)</h2>
+        <p> Due to COVID-19 pandemic, many companies allowed their employees to work from home (WFH).
+            Some employees are happy with WFH option, but some are not comfortable with it. There are pros & cons with WFH option for both employees and companies.
+            <br>Advantages for Employees:
+            <ul>
+            <li>Travel time to and from the office will be saved.</li>
+            <li>They can spend more time with family. This is beneficial for many especially for parents of 
+                young children.</li>
+            <li>Even in modern times, women are expected to take care of home and children. With this responsibility, 
+                several women are forced to leave their jobs. The rise in WFH culture is a boon for them. With this 
+                more women can join in jobs again.</li>
+            <li>The location will not be a barrier. Employees can get a job, even if the office is located in another 
+                city.</li>
+            <li>If they want to get to know their office and colleagues better, they can attend the office at regular 
+                intervals like once a week.</li>
+            
+            <br>Disadvantages for Employees:
+            <li>The line between work and home will be blurred. In general, employees leave work tensions at office and 
+                come home to relax. But this opportunity will be lost and it may cause anxiety. If work and personal life 
+                are not balanced well, work will extend to longer hours. This can create WFH burnout.</li>
+            <li>Employees have to set up a work environment at home, which will incur extra expense. Even then, some 
+                people may not focus on work due to the lack of a professional atmosphere.</li>
+            <li>Some companies are giving so much work just because their employees are working from home.</li>
+            <li>Teamwork is a bit difficult while working from home.</li>
+            <li>Working from home from a long periods of time can hamper social and interpersonal skills.</li>
+            <li>Continuously staying at home may make some people feel isolated.</li>
+            <li>For some people, setting up office space at home may not be an option due to lack of extra space in the 
+                home.</li>
+            <li>Some jobs may require employees to be online during work hours and the continuous power supply may not be 
+                available to many.</li>
+            <li>It can be difficult to establish connections with new colleagues because the opportunity to meet and talk 
+                with them during coffee breaks will be lost.</li></ul></p>
+
+                <h2>Users Viewpoint :-</h2>
+                <div style="width: 100%; height:350px; text-align: justify;" id="story"></div>
+                <form>
+                    <label>Add on your view points on this topic:-</label><input id="word"></input>
+                    <input type="button" value="submit" id="submitButton"></input>
+                </form>
+        </div>
+    
+    
+
+
+    <script>
+        var word = document.getElementById('word'),
+    originalStory = document.getElementById('story'),
+    button = document.getElementById("submitButton");
+    
+button.onclick = function(){
+    replaceStory(word.value);
+};
+
+var replaceStory = function(userWord) {
+    var story = ( userWord);
+
+    return originalStory.innerHTML = customSplit(story,100);
+};
+
+function customSplit(str, maxLength){
+    if(str.length <= maxLength)
+        return str;
+    var reg = new RegExp(".{1," + maxLength + "}","g");
+    var parts = str.match(reg);
+    return parts.join('\n');
+}
+    </script>
+    <button class="bt"><a href="index.html">Back to Home Page</a></button>
+</body>
+</html>
